@@ -1,12 +1,11 @@
-import React from "react";
 import {
   Box,
   Typography,
   IconButton,
   useMediaQuery,
   Stack,
+  Grid,
 } from "@mui/material";
-import Grid from "@mui/material/Grid2";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -14,13 +13,9 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import { useNavigate } from "react-router-dom";
-import { useColorMode } from "../theme/hooks";
 import AppIcon from "../../assets/app_icon.svg";
-import ReactIcon from "../../assets/react.svg";
 
 const Footer = () => {
-  const { theme } = useColorMode();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const navigate = useNavigate();
 
   const socialIcons = [
@@ -39,7 +34,7 @@ const Footer = () => {
     },
     {
       text: "Vehicles",
-      function: () => { 
+      function: () => {
         navigate("/Vehicles");
       },
     },
@@ -57,7 +52,7 @@ const Footer = () => {
     <>
       <Box
         sx={{
-          bgcolor: theme.palette.primary.main,
+          bgcolor: "#0041A1",
           color: "#fff",
           pt: { xs: "40px", md: "80px" },
           pb: { xs: "40px", md: "20px" },
@@ -67,32 +62,46 @@ const Footer = () => {
       >
         <Box>
           <Grid container spacing={4}>
-            <Grid size={{ xs: 12, md: 5 }}>
+            <Grid item xs={12} md={5}>
               <Stack spacing={2} alignItems="flex-start">
                 <img src={AppIcon} alt="Logo" style={{ height: 40 }} />
-                <Typography variant="h3" sx={{ color: "white", fontWeight: 700 }}>
-                              Ceyonara Travels
-                            </Typography>
                 <Typography
-                  variant="h4"
+                  sx={{
+                    color: "white",
+                    fontWeight: 700,
+                    fontFamily: ["montserrat"].join(","),
+                    fontSize: 20,
+                  }}
+                >
+                  Ceyonara Travels
+                </Typography>
+                <Typography
                   sx={{
                     textAlign: "left",
                     color: "inherit",
                     paddingTop: "20px",
+                    fontFamily: ["montserrat"].join(","),
+                    fontSize: 16,
+                    fontWeight: 500,
                   }}
                 >
-                  Take your next ride with us!  
+                  Take your next ride with us!
                 </Typography>
               </Stack>
             </Grid>
 
-            <Grid size={{ xs: 6, md: 3 }}>
+            <Grid item xs={6} md={3}>
               <Stack spacing={2} alignItems="flex-start">
                 {footerLinks.map((link) => (
                   <Typography
                     key={link.text}
-                    variant="h4"
-                    sx={{ cursor: "pointer", color: "inherit" }}
+                    sx={{
+                      cursor: "pointer",
+                      color: "inherit",
+                      fontFamily: ["montserrat"].join(","),
+                      fontSize: 16,
+                      fontWeight: 500,
+                    }}
                     onClick={link.function}
                   >
                     {link.text}
@@ -102,7 +111,9 @@ const Footer = () => {
             </Grid>
 
             <Grid
-              size={{ xs: 6, md: 4 }}
+              item
+              xs={6}
+              md={4}
               sx={{
                 display: "flex",
                 justifyContent: "flex-end",
@@ -123,23 +134,29 @@ const Footer = () => {
                 </Box>
                 <Box sx={{ display: "flex", gap: "10px" }}>
                   <LocalPhoneOutlinedIcon sx={{ fontSize: "16px" }} />
-                  <Typography variant="h4" sx={{ color: "inherit" }}>
+                  <Typography
+                    sx={{
+                      color: "inherit",
+                      fontFamily: ["montserrat"].join(","),
+                      fontSize: 16,
+                      fontWeight: 500,
+                    }}
+                  >
                     +94 12 34 56 789
                   </Typography>
                 </Box>
                 <Box sx={{ display: "flex", gap: "10px" }}>
                   <EmailOutlinedIcon sx={{ fontSize: "16px" }} />
-                  {isMobile ? (
-                    <Typography variant="h4" sx={{ color: "inherit" }}>
-                      support@
-                      <br />
-                      ceynora.com
-                    </Typography>
-                  ) : (
-                    <Typography variant="h4" sx={{ color: "inherit" }}>
-                      support@ceynora.com
-                    </Typography>
-                  )}
+                  <Typography
+                    sx={{
+                      color: "inherit",
+                      fontFamily: ["montserrat"].join(","),
+                      fontSize: 16,
+                      fontWeight: 500,
+                    }}
+                  >
+                    support@ceynora.com
+                  </Typography>
                 </Box>
               </Stack>
               <Box
@@ -161,10 +178,11 @@ const Footer = () => {
             }}
           >
             <Typography
-              variant="h4"
               sx={{
                 fontSize: { xs: "0.75rem", md: "0.875rem" },
                 color: "inherit",
+                fontFamily: ["montserrat"].join(","),
+                fontWeight: 500,
               }}
             >
               Terms and Conditions. Privacy Policy .Copyright © 2024 ceynora

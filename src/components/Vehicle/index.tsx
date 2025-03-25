@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 
-const VehicleList = ({ vehicle }) => {
+const VehicleList = ({ vehicle }:any) => {
   return (
     <Box
       sx={{
@@ -34,7 +34,7 @@ const VehicleList = ({ vehicle }) => {
           padding: 2,
         }}
       >
-        {vehicle.map((item) => (
+        {vehicle.map((item:any) => (
           <Box
             key={item.id}
             sx={{

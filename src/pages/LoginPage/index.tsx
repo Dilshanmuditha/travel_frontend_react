@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { TextField, Button, Card, CardContent, IconButton, Alert, Box } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import AppIcon from "../assets/app_icon.svg";
+import AppIcon from "../../assets/app_icon.svg";
 
-export default function Login() {
+export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -11,11 +11,10 @@ export default function Login() {
   const [successMessage, setSuccessMessage] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
 
   const Login = async () => {
     console.log("Login button clicked");
-alert("Login button clicked", email, password);
+// alert("Login button clicked", email, password);
     try {
       const response = await fetch('http://localhost:8080/api/v1/signin', {
         method: 'POST',
