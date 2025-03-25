@@ -6,10 +6,12 @@ import { addDays } from "date-fns";
 import BookingHeader from "../../components/bookingHeader";
 import { Book } from "@mui/icons-material";
 import CustomerOrders from "../customerOrders";
+import { useAppSelector } from "../../store/store";
 
 export default function LandingPage() {
   const [vehicle, setVehicle] = useState([]);
   const [startDate, setStartDate] = useState(new Date());
+  const userData = useAppSelector((state: any) => state.user);
 
   const checkBackend = async () => {
     try {
@@ -28,7 +30,8 @@ export default function LandingPage() {
 
   return (
     <>
-      <BookingHeader />
+      {userData?.role == "customer" && (
+        <BookingHeader />)}
       <Box
         sx={{
           display: "flex",
@@ -102,7 +105,7 @@ export default function LandingPage() {
           </Box>
         </Box>
       </Box>
-      
+
       <Container sx={{ paddingTop: "50px", textAlign: "center" }}>
         {/* Welcome Section */}
         <Box sx={{ marginBottom: "30px" }}>
