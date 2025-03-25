@@ -73,7 +73,7 @@ const Footer = () => {
                     fontSize: 20,
                   }}
                 >
-                  Ceyonara Travels
+                  Mega City Cab
                 </Typography>
                 <Typography
                   sx={{
@@ -185,7 +185,7 @@ const Footer = () => {
                 fontWeight: 500,
               }}
             >
-              Terms and Conditions. Privacy Policy .Copyright © 2024 ceynora
+              Terms and Conditions. Privacy Policy .Copyright © 2025 Mega City Cab
               <br />
               All Rights Reserved.
             </Typography>

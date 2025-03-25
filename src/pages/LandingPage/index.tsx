@@ -1,5 +1,5 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Banner from "../../assets/images/banner.png";
 
 export default function LandingPage() {
@@ -78,7 +78,7 @@ export default function LandingPage() {
                 fontFamily: ["montserrat"].join(","),
               }}
             >
-              Welcome to the Ceyonara Travels!
+              Welcome to the Mega City Cab!
             </Typography>
             <Typography
               mt={1}
