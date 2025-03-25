@@ -11,7 +11,7 @@ const VehicleList = ({ vehicle }:any) => {
       }}
     >
       {/* Section Title */}
-      <Typography
+      {/* <Typography
         variant="h2"
         sx={{
           fontWeight: 700,
@@ -21,7 +21,7 @@ const VehicleList = ({ vehicle }:any) => {
         }}
       >
         Select your vehicles
-      </Typography>
+      </Typography> */}
 
       {/* Vehicles Grid */}
       <Box
@@ -30,7 +30,7 @@ const VehicleList = ({ vehicle }:any) => {
           flexWrap: "wrap",
           justifyContent: "center",
           gap: 3,
-          width: "100%",
+          width: "70%",
           padding: 2,
         }}
       >
@@ -48,7 +48,7 @@ const VehicleList = ({ vehicle }:any) => {
               boxShadow: 2,
               backgroundColor: "white",
               transition: "transform 0.3s ease-in-out, box-shadow 0.3s",
-              width: { xs: "100%", sm: "45%", md: "30%" },
+              width: "100%",
               "&:hover": {
                 transform: "scale(1.05)",
                 boxShadow: 5,
@@ -62,17 +62,17 @@ const VehicleList = ({ vehicle }:any) => {
               alt={item.brand}
               sx={{
                 width: "100%",
-                height: 400,
+                height: 300,
                 objectFit: "cover",
                 borderRadius: 2,
               }}
             />
 
             {/* Vehicle Details */}
-            <Typography variant="h3" fontWeight={700} color="primary">
+            <Typography variant="h5" fontWeight={700} color="primary">
               Brand : {item.brand}
             </Typography>
-            <Typography variant="h3" fontWeight={700} color="primary">
+            <Typography variant="h5" fontWeight={700} color="primary">
               Category : {item.category}
             </Typography>
             <Typography variant="body1" sx={{ color: "#666" }}>

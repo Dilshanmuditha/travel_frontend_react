@@ -1,9 +1,15 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import Banner from "../../assets/images/banner.png";
+import DatePicker from "react-datepicker";
+import { addDays } from "date-fns";
+import BookingHeader from "../../components/bookingHeader";
+import { Book } from "@mui/icons-material";
+import CustomerOrders from "../customerOrders";
 
 export default function LandingPage() {
   const [vehicle, setVehicle] = useState([]);
+  const [startDate, setStartDate] = useState(new Date());
 
   const checkBackend = async () => {
     try {
@@ -22,6 +28,7 @@ export default function LandingPage() {
 
   return (
     <>
+      <BookingHeader />
       <Box
         sx={{
           display: "flex",
@@ -95,6 +102,7 @@ export default function LandingPage() {
           </Box>
         </Box>
       </Box>
+      
       <Container sx={{ paddingTop: "50px", textAlign: "center" }}>
         {/* Welcome Section */}
         <Box sx={{ marginBottom: "30px" }}>
