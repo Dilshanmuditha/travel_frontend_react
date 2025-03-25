@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Modal, Box, TextField, Button, MenuItem, InputAdornment, Typography } from "@mui/material";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -7,13 +7,14 @@ import { useNavigate } from "react-router-dom";
 import VehicleList from "../Vehicle";
 import { set } from "date-fns";
 import CustomerOrders from "../../pages/customerOrders";
+import { useAppSelector } from "../../store/store";
 
 const BookingHeader = () => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    const [startDate, setStartDate] = useState(today);
-    const [endDate, setEndDate] = useState(today);
+    const [startDate, setStartDate] = useState<any>(today);
+    const [endDate, setEndDate] = useState<any>(today);
     const [pickup, setPickup] = useState("");
     const [show, setShow] = useState(false);
     const [vehicle, setVehicle] = useState([]);
