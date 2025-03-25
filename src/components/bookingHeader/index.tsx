@@ -19,7 +19,8 @@ const BookingHeader = () => {
     const [vehicle, setVehicle] = useState([]);
     const [confirmDialog, setConfirmDialog] = useState(false);
     const [vehicleId, setVehicleId] = useState(null);
-    
+    const userData = useAppSelector((state: any) => state.user);
+
     const navigate = useNavigate();
 
     const handleSearch = () => {
@@ -61,7 +62,7 @@ const BookingHeader = () => {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    customerId: 1,
+                    customerId: userData?.id || 3,
                     vehicleId: vehicleId,
                     start_date: new Date(startDate).toISOString(),
                     end_date: new Date(endDate).toISOString(),
