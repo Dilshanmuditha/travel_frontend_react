@@ -153,6 +153,32 @@ const Navbar = () => {
                 >
                   {"Sign in"}
                 </Typography>
+                <Typography
+                  sx={{
+                    color: "#fff", // Active color
+                    fontWeight: location.pathname === "/sign-up" ? 700 : 400, // Bold if active
+                    fontFamily: ["montserrat"].join(","),
+                    fontSize: 24,
+                    cursor: "pointer",
+                    position: "relative",
+                    "&::after": {
+                      content: '""',
+                      display: "block",
+                      width: "100%",
+                      height: "2px",
+                      backgroundColor:
+                        location.pathname === "/sign-up"
+                          ? "#ffffff"
+                          : "transparent", // Show underline for active item
+                      position: "absolute",
+                      bottom: "-4px", // Adjust spacing
+                      left: 0,
+                    },
+                  }}
+                  onClick={() => navigate("/sign-up")}
+                >
+                  {"Sign Up"}
+                </Typography>
               </>
             )}
           </Box>

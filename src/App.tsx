@@ -9,6 +9,7 @@ import DriverPage from "./pages/Driver";
 import RequireAuth from "./route/RequireAuth";
 import AboutPage from "./pages/About";
 import VehicleRegister from "./pages/Register";
+import SignUpPage from "./pages/SignUp";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/sign-up" element={<SignUpPage />} />
           <Route element={<RequireAuth allowedRoles="admin" />}>
             <Route path="/register" element={<VehicleRegister />} />
           </Route>

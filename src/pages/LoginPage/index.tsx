@@ -13,9 +13,11 @@ import AppIcon from "../../assets/app_icon.svg";
 import axios, { AxiosError } from "axios";
 import { useAppDispatch } from "../../store/store";
 import { addUserDetails } from "../../features/userSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(false);
@@ -38,6 +40,7 @@ export default function LoginPage() {
       console.log(response.data);
       dispatch(
         addUserDetails({
+          id: response.data.id,
           role: response.data.role,
           name: response.data.name,
           email: response.data.email,
@@ -45,6 +48,8 @@ export default function LoginPage() {
       );
       setSuccess(true);
       setSuccessMessage("Login successful");
+      navigate("/");
+      
 
     } catch (error) {
       // Explicitly cast error as AxiosError
